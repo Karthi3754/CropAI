@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Crop Prediction System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>CropAI</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Statistics</a>
+                <a href="#"><i class="fas fa-history"></i> History</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Karthick | Abishek</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <header class="main-header">
+                <h1>Crop Prediction System</h1>
+                <div class="user-info">
+                    <span><i class="fas fa-bell"></i></span>
+                    <span><i class="fas fa-user-circle"></i></span>
+                </div>
+            </header>
+
+            <div class="breadcrumb">
+                <span><i class="fas fa-home"></i> Home</span>
+                <span>/</span>
+                <span>Crop Prediction</span>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="info-card">
+                    <div class="info-card-icon" style="background-color: #ebf8ff;">
+                        <i class="fas fa-temperature-high" style="color: #3182ce;"></i>
+                    </div>
+                    <div class="info-card-content">
+                        <h3>Temperature</h3>
+                        <p>22°C</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon" style="background-color: #e6fffa;">
+                        <i class="fas fa-tint" style="color: #319795;"></i>
+                    </div>
+                    <div class="info-card-content">
+                        <h3>Humidity</h3>
+                        <p>65%</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon" style="background-color: #fffaf0;">
+                        <i class="fas fa-cloud-rain" style="color: #dd6b20;"></i>
+                    </div>
+                    <div class="info-card-content">
+                        <h3>Rainfall</h3>
+                        <p>2.5 mm</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon" style="background-color: #f0fff4;">
+                        <i class="fas fa-spa" style="color: #38a169;"></i>
+                    </div>
+                    <div class="info-card-content">
+                        <h3>Soil pH</h3>
+                        <p>6.5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-leaf"></i> Predict Optimal Crop</h2>
+                    <span class="card-header-action"><i class="fas fa-question-circle"></i> Help</span>
+                </div>
+                
+                <div class="card-content">
+                    <form id="predictionForm">
+                        <div class="form-group">
+                            <label for="features">Enter Soil & Weather Parameters:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-sliders-h"></i>
+                                <input type="text" id="features" placeholder="50, 30, 40, 6.5, 0.5, 20, 0.3, 1.5, 0.4, 0.5, 0.2">
+                            </div>
+                            <div class="parameter-guide">
+                                <span class="parameter-badge">N</span>
+                                <span class="parameter-badge">P</span>
+                                <span class="parameter-badge">K</span>
+                                <span class="parameter-badge">pH</span>
+                                <span class="parameter-badge">Rainfall</span>
+                                <span class="parameter-badge">Temp</span>
+                                <span class="parameter-badge">Humidity</span>
+                                <span class="parameter-badge">Moisture</span>
+                                <span class="parameter-badge">Soil Type</span>
+                                <span class="parameter-badge">Rotation</span>
+                                <span class="parameter-badge">Pest</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-predict">
+                            <i class="fas fa-search"></i> Predict Crop
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="result-container" id="resultContainer">
+                <div class="result-header">
+                    <h3><i class="fas fa-stars"></i> Prediction Result</h3>
+                    <span class="timestamp">Generated just now</span>
+                </div>
+                <div class="result-content">
+                    <div class="crop-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="result-details">
+                        <h4>Recommended Crop:</h4>
+                        <div id="output" class="prediction-output">Your prediction will appear here</div>
+                        <div class="confidence-meter">
+                            <div class="confidence-bar">
+                                <div class="confidence-fill"></div>
+                            </div>
+                            <span>90% confidence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <p>&copy; 2025 Advanced Crop Prediction System | Developed with ❤️ for Agriculture</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
