@@ -4,7 +4,7 @@ document.getElementById("predictionForm").addEventListener("submit", function(ev
     let featuresInput = document.getElementById("features").value;
     let featuresArray = featuresInput.split(",").map(Number);
 
-    fetch("http://localhost:5000/predict", {
+    fetch("https://cropai-backend.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ features: featuresArray })
